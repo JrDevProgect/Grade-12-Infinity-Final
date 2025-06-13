@@ -1,0 +1,78 @@
+/* Custom styles for Grade 12 Infinity TVL AFA website */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Lora';
+  src: url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+}
+
+body {
+  @apply font-lora bg-afa-light;
+  background-image: url('/uploads/leaf-pattern.png');
+  background-repeat: repeat;
+  background-size: 200px;
+  background-opacity: 0.1;
+}
+
+.bg-afa-light {
+  background-color: #f5f6f0;
+}
+
+.bg-afa-dark {
+  background-color: #2e4f3b;
+}
+
+.text-afa-dark {
+  color: #2e4f3b;
+}
+
+.bg-afa-card {
+  background-color: #e8e8d5;
+  background-image: linear-gradient(45deg, #f0e8c8, #e8e8d5);
+}
+
+.bg-afa-green {
+  background-color: #4a7043;
+}
+
+.text-afa-green {
+  color: #4a7043;
+}
+
+.nav-link:hover {
+  @apply transform scale-105;
+}
+
+.animate-leaf-fall {
+  animation: leafFall 1s ease-in-out;
+}
+
+@keyframes leafFall {
+  0% { transform: translateY(-20px) rotate(5deg); opacity: 0; }
+  50% { transform: translateY(10px) rotate(-5deg); }
+  100% { transform: translateY(0) rotate(0); opacity: 1; }
+}
+
+input:focus, button:focus {
+  @apply outline-none ring-2 ring-afa-green;
+}
+
+button {
+  @apply rounded-lg border-2 border-afa-green;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

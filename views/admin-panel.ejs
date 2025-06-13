@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - Grade 12 Infinity TVL AFA</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="/css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-afa-light font-lora">
+  <%- include('partials/header', { currentPage: 'admin' }) %>
+  <main class="container mx-auto px-6 py-12">
+    <h2 class="text-3xl font-bold text-afa-dark mb-6 font-roboto animate-leaf-fall">Admin Panel</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-afa-card p-6 rounded-lg shadow-md animate-leaf-fall">
+        <h3 class="text-xl font-bold text-afa-dark mb-4 font-roboto">Add Student</h3>
+        <form id="student-form" action="/admin/students" method="POST" class="space-y-4">
+          <input type="text" name="name" placeholder="Student Name" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-afa-green transition-all duration-300" required>
+          <button type="submit" class="w-full bg-afa-green text-white p-3 rounded-lg hover:bg-afa-dark transition-all duration-300 flex items-center justify-center">
+            <span>Add</span>
+            <svg id="student-spinner" class="hidden w-5 h-5 ml-2 animate-spin" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+          </button>
+          <p id="student-error" class="text-red-500 text-sm hidden"></p>
+        </form>
+      </div>
+      <div class="bg-afa-card p-6 rounded-lg shadow-md animate-leaf-fall">
+        <h3 class="text-xl font-bold text-afa-dark mb-4 font-roboto">Add Teacher</h3>
+        <form id="teacher-form" action="/admin/teachers" method="POST" class="space-y-4">
+          <input type="text" name="name" placeholder="Teacher Name" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-afa-green transition-all duration-300" required>
+          <button type="submit" class="w-full bg-afa-green text-white p-3 rounded-lg hover:bg-afa-dark transition-all duration-300 flex items-center justify-center">
+            <span>Add</span>
+            <svg id="teacher-spinner" class="hidden w-5 h-5 ml-2 animate-spin" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+          </button>
+          <p id="teacher-error" class="text-red-500 text-sm hidden"></p>
+        </form>
+      </div>
+      <div class="bg-afa-card p-6 rounded-lg shadow-md animate-leaf-fall">
+        <h3 class="text-xl font-bold text-afa-dark mb-4 font-roboto">Upload to Gallery</h3>
+        <form id="gallery-form" action="/admin/gallery" method="POST" enctype="multipart/form-data" class="space-y-4">
+          <input type="file" name="image" accept="image/*" class="w-full p-3 border rounded-lg" required>
+          <button type="submit" class="w-full bg-afa-green text-white p-3 rounded-lg hover:bg-afa-dark transition-all duration-300 flex items-center justify-center">
+            <span>Upload</span>
+            <svg id="gallery-spinner" class="hidden w-5 h-5 ml-2 animate-spin" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+          </button>
+          <p id="gallery-error" class="text-red-500 text-sm hidden"></p>
+        </form>
+      </div>
+    </div>
+  </main>
+  <%- include('partials/footer') %>
+  <script src="/js/main.js"></script>
+</body>
+</html>

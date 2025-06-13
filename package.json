@@ -1,15 +1,19 @@
 {
-  "name": "nodejs",
+  "name": "grade12-infinity-tvl-afa",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Website for Grade 12 Infinity TVL AFA",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "@types/node": "^22.13.11"
+    "express": "^4.21.0",
+    "ejs": "^3.1.10",
+    "multer": "^1.4.5-lts.1",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
   }
 }
