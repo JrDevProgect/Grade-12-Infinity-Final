@@ -1,31 +1,28 @@
-<% 
-  const navItems = [
-    { name: 'Home', href: '/', id: 'home' },
-    { name: 'Students', href: '/students', id: 'students' },
-    { name: 'Teachers', href: '/teachers', id: 'teachers' },
-    { name: 'Gallery', href: '/gallery', id: 'gallery' },
-    { name: 'About', href: '/about', id: 'about' },
-    { name: 'Developer', href: '/developer', id: 'developer' },
-    { name: 'Admin', href: '/admin', id: 'admin' }
-  ];
-%>
-<header class="bg-afa-dark text-white sticky top-0 z-50 shadow-lg">
-  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-    <h1 class="text-2xl font-bold font-roboto">Grade 12 Infinity TVL AFA</h1>
-    <button id="burger" class="md:hidden focus:outline-none">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-      </svg>
-    </button>
-    <nav id="nav" class="hidden md:flex space-x-6">
-      <% navItems.forEach(item => { %>
-        <a href="<%= item.href %>" class="nav-link <%= currentPage === item.id ? 'text-afa-green font-semibold' : 'hover:text-afa-green' %> transition-all duration-300 font-roboto"><%= item.name %></a>
-      <% }) %>
-    </nav>
-  </div>
-  <div id="mobile-nav" class="hidden md:hidden bg-afa-dark">
-    <% navItems.forEach(item => { %>
-      <a href="<%= item.href %>" class="block py-3 px-4 text-white hover:bg-afa-green hover:text-white transition-all duration-300 font-roboto <%= currentPage === item.id ? 'bg-afa-green' : '' %>"><%= item.name %></a>
-    <% }) %>
+<header class="site-header">
+  <div class="container">
+    <div class="header-content">
+      <a href="/" class="logo">
+        <span class="logo-text">Grade 12 Infinity</span>
+        <span class="logo-highlight">TVL-AFA</span>
+      </a>
+      
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <nav class="main-nav">
+        <ul>
+          <li><a href="/" class="<%= currentPath === '/' ? 'active' : '' %>">Home</a></li>
+          <li><a href="/students" class="<%= currentPath === '/students' ? 'active' : '' %>">Students</a></li>
+          <li><a href="/teachers" class="<%= currentPath === '/teachers' ? 'active' : '' %>">Teachers</a></li>
+          <li><a href="/gallery" class="<%= currentPath === '/gallery' ? 'active' : '' %>">Gallery</a></li>
+          <li><a href="/about" class="<%= currentPath === '/about' ? 'active' : '' %>">About</a></li>
+          <li><a href="/developer" class="<%= currentPath === '/developer' ? 'active' : '' %>">Developer</a></li>
+          <li><a href="/admin" class="<%= currentPath.startsWith('/admin') ? 'active' : '' %>">Admin</a></li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </header>

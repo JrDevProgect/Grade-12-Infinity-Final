@@ -1,26 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Students - Grade 12 Infinity TVL AFA</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link href="/css/styles.css" rel="stylesheet">
-</head>
-<body class="bg-afa-light font-lora">
-  <%- include('partials/header', { currentPage: 'students' }) %>
-  <main class="container mx-auto px-6 py-12">
-    <h2 class="text-3xl font-bold text-afa-dark mb-6 font-roboto animate-leaf-fall">Our Students</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <% students.forEach(student => { %>
-        <div class="bg-afa-card p-6 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 animate-leaf-fall">
-          <p class="text-lg text-gray-800"><%= student.name %></p>
-        </div>
-      <% }) %>
+<%- include('layouts/main', { title: 'Students', body: `
+  <section class="page-header">
+    <div class="container">
+      <h1>Our Students</h1>
+      <p>Meet the future agricultural leaders of tomorrow</p>
     </div>
-  </main>
-  <%- include('partials/footer') %>
-  <script src="/js/main.js"></script>
-</body>
-</html>
+  </section>
+  
+  <section class="students-section">
+    <div class="container">
+      <div class="students-grid">
+        <% if (students && students.length > 0) { %>
+          <% students.forEach(student => { %>
+            <div class="student-card" data-aos="fade-up">
+              <div class="student-avatar"></div>
+              <h3><%= student.name %></h3>
+              <p>TVL-AFA Student</p>
+            </div>
+          <% }) %>
+        <% } else { %>
+          <div class="empty-state">
+            <p>No students have been added yet.</p>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </section>
+` }) %>

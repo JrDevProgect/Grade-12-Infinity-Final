@@ -1,11 +1,10 @@
 {
   "admin": {
     "username": "admin",
-    "password": "c6ab95ebec387dfb707fcceec51676fb9434b808776d886290bb5d1d8ecd55a5"
+    "password": "e6c00024fa3c6ae6391ab7e034306abfd5fd90bda0b4e2f8644fe8f461955635"
   },
   "git": {
     "repo": "1",
     "branch": "main"
-  },
-  "secret_key": "c7c61810e82ecb806173f94bb507185d"
+  }
 }

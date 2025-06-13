@@ -1,22 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home - Grade 12 Infinity TVL AFA</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link href="/css/styles.css" rel="stylesheet">
-</head>
-<body class="bg-afa-light font-lora">
-  <%- include('partials/header', { currentPage: 'home' }) %>
-  <main class="container mx-auto px-6 py-12">
-    <section class="text-center bg-afa-card bg-opacity-80 p-8 rounded-lg shadow-lg animate-leaf-fall">
-      <h2 class="text-4xl font-bold text-afa-dark mb-4 font-roboto">Welcome to Grade 12 Infinity TVL AFA</h2>
-      <p class="text-lg text-gray-700 max-w-2xl mx-auto">Join our community of Agri-Fishery Arts enthusiasts, learning sustainable farming, aquaculture, and innovative agricultural techniques to cultivate a greener future.</p>
-    </section>
-  </main>
-  <%- include('partials/footer') %>
-  <script src="/js/main.js"></script>
-</body>
-</html>
+<%- include('layouts/main', { title: 'Home', body: `
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">Grade 12 Infinity TVL AFA</h1>
+        <p class="hero-subtitle">Cultivating Knowledge, Harvesting Success</p>
+        <div class="hero-buttons">
+          <a href="/students" class="btn btn-primary">Our Students</a>
+          <a href="/gallery" class="btn btn-secondary">View Gallery</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="features">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-card" data-aos="fade-up">
+          <div class="feature-icon agriculture"></div>
+          <h3>Agriculture</h3>
+          <p>Learn sustainable farming practices and crop management techniques.</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="feature-icon fishery"></div>
+          <h3>Fishery</h3>
+          <p>Explore aquaculture systems and marine resource management.</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-icon arts"></div>
+          <h3>Arts</h3>
+          <p>Develop creative approaches to agricultural and fishery challenges.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Join Our Community</h2>
+        <p>Become part of our growing family of agricultural innovators.</p>
+        <a href="/about" class="btn btn-accent">Learn More</a>
+      </div>
+    </div>
+  </section>
+` }) %>

@@ -1,26 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teachers - Grade 12 Infinity TVL AFA</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link href="/css/styles.css" rel="stylesheet">
-</head>
-<body class="bg-afa-light font-lora">
-  <%- include('partials/header', { currentPage: 'teachers' }) %>
-  <main class="container mx-auto px-6 py-12">
-    <h2 class="text-3xl font-bold text-afa-dark mb-6 font-roboto animate-leaf-fall">Our Teachers</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <% teachers.forEach(teacher => { %>
-        <div class="bg-afa-card p-6 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 animate-leaf-fall">
-          <p class="text-lg text-gray-800"><%= teacher.name %></p>
-        </div>
-      <% }) %>
+<%- include('layouts/main', { title: 'Teachers', body: `
+  <section class="page-header">
+    <div class="container">
+      <h1>Our Teachers</h1>
+      <p>Dedicated educators guiding the next generation</p>
     </div>
-  </main>
-  <%- include('partials/footer') %>
-  <script src="/js/main.js"></script>
-</body>
-</html>
+  </section>
+  
+  <section class="teachers-section">
+    <div class="container">
+      <div class="teachers-grid">
+        <% if (teachers && teachers.length > 0) { %>
+          <% teachers.forEach(teacher => { %>
+            <div class="teacher-card" data-aos="fade-up">
+              <div class="teacher-avatar"></div>
+              <h3><%= teacher.name %></h3>
+              <p>TVL-AFA Instructor</p>
+            </div>
+          <% }) %>
+        <% } else { %>
+          <div class="empty-state">
+            <p>No teachers have been added yet.</p>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </section>
+` }) %>

@@ -1,0 +1,11 @@
+<%- include('layouts/main', { title: 'Error', body: `
+  <section class="error-section">
+    <div class="container">
+      <div class="error-content">
+        <h1>Oops!</h1>
+        <p><%= message || 'Something went wrong' %></p>
+        <a href="/" class="btn btn-primary">Return Home</a>
+      </div>
+    </div>
+  </section>
+` }) %>

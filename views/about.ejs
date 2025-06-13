@@ -1,22 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About - Grade 12 Infinity TVL AFA</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link href="/css/styles.css" rel="stylesheet">
-</head>
-<body class="bg-afa-light font-lora">
-  <%- include('partials/header', { currentPage: 'about' }) %>
-  <main class="container mx-auto px-6 py-12">
-    <section class="text-center bg-afa-card bg-opacity-80 p-8 rounded-lg shadow-lg animate-leaf-fall">
-      <h2 class="text-3xl font-bold text-afa-dark mb-4 font-roboto">About Us</h2>
-      <p class="text-lg text-gray-700 max-w-2xl mx-auto">Grade 12 Infinity TVL AFA is dedicated to mastering Agri-Fishery Arts, equipping students with skills in sustainable agriculture, aquaculture, and food production to nurture the earth and feed the future.</p>
-    </section>
-  </main>
-  <%- include('partials/footer') %>
-  <script src="/js/main.js"></script>
-</body>
-</html>
+<%- include('layouts/main', { title: 'About Us', body: `
+  <section class="page-header">
+    <div class="container">
+      <h1>About Us</h1>
+      <p>Our mission and vision</p>
+    </div>
+  </section>
+  
+  <section class="about-section">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-image" data-aos="fade-right"></div>
+        <div class="about-text" data-aos="fade-left">
+          <h2>Our Story</h2>
+          <p>Grade 12 Infinity TVL AFA is dedicated to mastering Agri-Fishery Arts, equipping students with skills in sustainable agriculture, aquaculture, and food production to nurture the earth and feed the future.</p>
+          <p>We believe in hands-on learning, environmental stewardship, and developing the next generation of agricultural innovators.</p>
+          
+          <h2>Our Values</h2>
+          <ul class="values-list">
+            <li>Sustainability</li>
+            <li>Innovation</li>
+            <li>Community</li>
+            <li>Excellence</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+` }) %>
